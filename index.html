@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸</title>
+    <!-- Cute fonts for that notebook texture -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Overlay elements for flashes and dynamic elements -->
+    <div id="flash"></div>
+    <div id="sparkle-container"></div>
+    
+    <!-- Hidden YouTube Player Container for Background Music -->
+    <div id="yt-player"></div>
+
+    <!-- SCENE 1: THE HIDDEN SCRAPBOOK -->
+    <section id="scene-1" class="scene active" onclick="nextScene(2)">
+        <div class="scrapbook-wrapper">
+            <div class="doodle cat1">🐈‍⬛</div>
+            <div class="doodle flower1">🌸</div>
+            <div class="doodle cat2">💤🐾</div>
+            <div class="doodle tapir">🦫 <span class="tapir-label">(tapir!)</span></div>
+            
+            <div class="caption cap1">secret page found ✎</div>
+            <div class="caption cap2">do not open unless curious 👀</div>
+            
+            <div class="cover-content">
+                <h1 class="cover-title">yo</h1>
+                <p class="cover-sub">tiny surprise waiting... (Tap to open)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 2: THE SECRET GARDEN -->
+    <section id="scene-2" class="scene">
+        <h2 class="garden-title">okay okay... you know what to do 🤨</h2>
+        <button class="dab-btn" onclick="chargeMeter()">dab me up</button>
+        
+        <div class="progress-container">
+            <div id="friendship-bar" class="progress-bar"></div>
+        </div>
+        <p id="meter-text" class="meter-status">Energy: 0%</p>
+    </section>
+
+    <!-- SCENE 3: THE OLD ENVELOPE & LETTER -->
+    <section id="scene-3" class="scene">
+        <div class="envelope" id="envelope-card">
+            <div class="withered-rose">🌹</div>
+            <div id="typewriter-text" class="letter-content"></div>
+            <button id="next-page-btn" class="next-page-btn" onclick="nextScene(4)">one more page? 🧸</button>
+        </div>
+    </section>
+
+    <!-- SCENE 4: FINAL SCRAPBOOK PAGE -->
+    <section id="scene-4" class="scene">
+        <!-- Canvas for the shooting Cupid Arrow animation -->
+        <canvas id="canvas-finale"></canvas>
+
+        <div class="bouquet-showcase">
+            <div class="plushie-zone" id="plushie-shooter">🧸</div>
+            <div class="flower-grid">
+                <span>🌹</span><span>🌸</span><span>🌹</span>
+                <span>🌸</span><span class="center-bouquet">💐</span><span>🌸</span>
+                <span>🌹</span><span>🌸</span><span>🌹</span>
+            </div>
+        </div>
+        <h2 class="final-msg">you found the last page 🧸💚</h2>
+        <p class="closing-note">the scrapbook closes. but the memory stays.</p>
+    </section>
+
+    <!-- Load the YouTube Iframe API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
