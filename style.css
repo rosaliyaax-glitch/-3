@@ -208,12 +208,15 @@ body {
 .envelope {
     width: 90%;
     max-width: 420px;
+    max-height: 80vh; /* Prevents the envelope from stretching off-screen */
     background: #fcf6ed;
     border: 2px dashed #d6c5b3;
     padding: 30px;
     border-radius: 4px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .withered-rose {
@@ -222,6 +225,7 @@ body {
     right: -10px;
     font-size: 30px;
     transform: rotate(15deg);
+    z-index: 10;
 }
 
 .letter-content {
@@ -229,9 +233,22 @@ body {
     font-size: 24px;
     line-height: 1.6;
     text-align: left;
-    min-height: 200px;
-    white-space: pre-line;
+    overflow-y: auto; /* ENABLES INSIDE SCROLLING! */
+    padding-right: 10px;
     color: #5c4d50;
+    
+    /* Elegant modern scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #ffcad4 transparent;
+}
+
+/* Scrollbar tweaks for Chrome/Safari/Edge */
+.letter-content::-webkit-scrollbar {
+    width: 5px;
+}
+.letter-content::-webkit-scrollbar-thumb {
+    background-color: #ffcad4;
+    border-radius: 10px;
 }
 
 .next-page-btn {
@@ -244,7 +261,9 @@ body {
     cursor: pointer;
     border-radius: 5px;
     display: none;
+    flex-shrink: 0; /* Keeps the button from distorting */
 }
+
 
 /* --- SCENE 4: GRAND FINALE --- */
 #canvas-finale {
